@@ -16,7 +16,8 @@ public class Ex05 {
 		
 		System.out.printf("Temperatura em fahrenheit: %.1f", tempF);
 		
-		
 	}
 
 }
+
+
