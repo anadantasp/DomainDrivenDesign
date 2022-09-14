@@ -2,7 +2,7 @@ package entrada_processamento_saida;
 
 import java.util.Scanner;
 
-public class Ex50 {
+public class Ex50For {
 
 	public static void main(String[] args) {
 		
