@@ -8,7 +8,7 @@ public class ProgramaFor {
 
 		Scanner scn = new Scanner(System.in);
 
-		Aluno[] alunos = new Aluno[5];
+		Aluno[] alunos = new Aluno[2];
 
 		for (int i = 0; i < alunos.length; i++) {
 
