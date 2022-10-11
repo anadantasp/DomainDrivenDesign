@@ -1,47 +1,76 @@
 package entrada_processamento_saida;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Ex45 {
 
 	public static void main(String[] args) {
-		
-		Scanner ler = new Scanner(System.in);
-		
-		List<Integer> lista = new ArrayList<>();
-		
-		int i, num, soma, qntd;
-		
-		System.out.printf("Digite a quantidade de números que deseja inserir: ");
-		qntd = ler.nextInt();
 
-		for (i = 1; i <= qntd; i++) {
-			System.out.printf("Digite o %dº número: ", i);
-		    num = ler.nextInt();
-		    while (num < 0) {
-		    	System.out.printf("Digite o %dº valor novamente: ", i);
-			    num = ler.nextInt();
-		    }
-		    lista.add(num);
+		Scanner scn = new Scanner(System.in);
+		
+		int quant, num, maior=0, menor=0,positivos=0, negativos=0, soma=0;
+		float media = 0, porcentagemPositivo=0, porcentagemNegativo=0;
+		
+		System.out.printf("Quantidade de números que serão digitados: ");
+		quant = scn.nextInt();
+		
+		while(quant < 0 || quant >=20) {
+			System.out.println("Opa! Não pode números negativos e quantidade deve ser menor que 20");
+			System.out.printf("Quantidade de números que serão digitados: ");
+			quant = scn.nextInt();
 		}
 		
-		soma = 0;		
-		int maxValue = 0;
-		int minValue = 0;
-		
-		for (Integer integer : lista) {
-            if (integer > maxValue)
-                maxValue = integer;
-            else if (integer < minValue)
-                minValue = integer;
-            soma += integer;
-        }
+		for(int i = 1; i <= quant; i++) {
+			System.out.println("Entre com um número: ");
+			num = scn.nextInt();
+			
+			/*
+			 * while(num < 0) {
+			 * System.out.println("Opa! Não pode números negativos!");
+			 * System.out.println("Digite outro número: ");
+			 * num = scn.nextInt();
+			 *}
+			 */
+				
+			if(i == 1) {
+				maior = num;
+			}else{
+				if(num > maior) {
+					maior = num;
+				}
+			}
+			
+			if(i == 1) {
+				menor = num;
+			}else{
+				if(num < menor) {
+					menor = num;
+				}
+			}
+			
+			if(num > 0) {
+				positivos++;
+			}else {
+				negativos--;
+			}
+			
+			soma = soma + num;
 
-		System.out.printf("O maior valor é %d\n", maxValue);
-		System.out.printf("A soma desses valores é %d\n", soma);
-		System.out.printf("A média desses valores é %d\n", soma/lista.size());
+		}
+		
+		media = soma / quant;
+		
+
+		porcentagemPositivo = (positivos * 100) / quant;
+		porcentagemNegativo = (negativos * 100) / quant;
+
+		
+		System.out.println("O maior valor: "  + maior);
+		System.out.println("O menor valor: "  + menor);
+		System.out.println("A soma dos valores"  + soma);
+		System.out.println("Porcentagem dos valores positivos: "  + porcentagemPositivo);
+		System.out.println("Porcentagem dos valores negativos : "  + porcentagemNegativo);
+
 
 	}
 

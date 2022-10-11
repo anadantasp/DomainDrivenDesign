@@ -1,8 +1,9 @@
 package entrada_processamento_saida;
 
+import java.util.Scanner;
+
 //Exercício 4 - Calcular e exibir a média aritmética de quatro valores quaisquer que serão digitados
 
-import java.util.Scanner;
 
 public class Ex04 {
 
@@ -30,3 +31,4 @@ public class Ex04 {
 	}
 
 }
+

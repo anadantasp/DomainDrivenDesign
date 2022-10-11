@@ -1,11 +1,11 @@
 package entrada_processamento_saida;
 
 /*
- * Exercício 44 - Entrar via teclado com dez valores positivos. Consistir a digitação e enviar 
- * mensagem de erro, se necessário. Após a digitação, exibir:
+ * Exercï¿½cio 44 - Entrar via teclado com dez valores positivos. Consistir a digitaï¿½ï¿½o e enviar 
+ * mensagem de erro, se necessï¿½rio. Apï¿½s a digitaï¿½ï¿½o, exibir:
  *a) O maior valor;
  *b) A soma dos valores;
- *c) A média aritmética dos valores;
+ *c) A mï¿½dia aritmï¿½tica dos valores;
  */
 
 import java.util.Scanner;
@@ -14,34 +14,40 @@ public class Ex44For {
 
 	public static void main(String[] args) {
 		
-		double v[] = new double [10];
-        double media;
-        int i;
-        Scanner entrada = new Scanner(System.in);
+		Scanner scn = new Scanner(System.in);
+		
+		int num, maior=0, soma=0;
+		float media = 0;
+		
+		for(int i = 1; i <=10; i++) {
+			System.out.println("Entre com um nÃºmero: ");
+			num = scn.nextInt();
+			
+			while(num < 0) {
+				System.out.println("Opa! NÃ£o pode nÃºmeros negativos!");
+				System.out.println("Digite outro nÃºmero: ");
+				num = scn.nextInt();
+			}
+			
+			if(i == 1) {
+				maior = num;
+			}else{
+				if(num > maior) {
+					maior = num;
+				}
+			}
+			
+			soma = soma + num;
 
-        for (i = 0; i<v.length;   i++) {
-            System.out.print("Informe o " + (i+1) + "º valor de 10: ");
-            v[i] = entrada.nextDouble();
-        }
-        
-        double soma = 0;
-        double maior = v[0];
-        
-        for (i = 0; i < v.length ; i++) {
-            soma = soma + v[i];
-
-            if (v[i] > maior) {
-                maior = v[i];
-            }
-        }
-
-        media = soma / v.length;
-
-        System.out.printf("\n");
-        System.out.println("O maior valor digitado é: " + maior);
-        System.out.println("A soma dos valores digitado é: " + soma);
-        System.out.println("A média dos valores digitado é: " + media);
-        entrada.close();
+		}
+		
+		media = soma/10;
+		
+		System.out.println("O maior valor: "  + maior);
+		System.out.println("A soma dos valores"  + soma);
+		System.out.println("MÃ©dia"  + media);
+		
+		
 	}
 
 }

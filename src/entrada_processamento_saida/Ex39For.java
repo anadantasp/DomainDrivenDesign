@@ -10,21 +10,14 @@ public class Ex39For {
 
 	public static void main(String[] args) {
 		
-		int atual = 0, anterior = 0;
-		
-		int valores [] = new int [30];
+		int a=0, b=1, f=a+b;
 		
 		
-		for(int i = 0; i  < 30; i++) {
-			
-			if(i == 0 || i == 1) {
-				valores[i] = 1;
-				System.out.print(valores[i] + ", ");
-			} else {
-				valores[i] = valores[i-1] + valores[i-2];
-				System.out.print(valores[i] + ", ");
-			}
-			
+		for(int i = 1; i  <= 30; i++) {
+			b = a;
+			a = f;
+			f = a + b;
+			System.out.print(f + ", ");
 		}
 		
 		
